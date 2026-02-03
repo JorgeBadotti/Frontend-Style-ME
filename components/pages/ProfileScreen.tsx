@@ -2,17 +2,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from '../../constants';
 import { UserProfile, Gender } from '../../types';
-import styles from './ProfileScreen.module.css';
 import Icon from '../atoms/Icon/Icon';
 import TextElement from '../atoms/TextElement/TextElement';
 import Input from '../atoms/Input/Input';
 import Button from '../atoms/Button/Button';
-import GenUIImage from '../atoms/Image/Image'; // FIX: Changed Image to GenUIImage
+import GenUIImage from '../atoms/Image/Image';
 import SocialButton from '../molecules/SocialButton/SocialButton';
 
-interface ProfileScreenProps {
-  // onLogout: () => void; // Passed from App.tsx via Layout for consistency
-}
+interface ProfileScreenProps {}
 
 const ProfileScreen: React.FC<ProfileScreenProps> = () => {
   const navigate = useNavigate();
@@ -24,7 +21,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
     stylePreference: 'Minimalist Chic',
     whatsapp: '+1 (555) 000-0000',
     gender: Gender.FEMALE,
-    avatarUrl: 'https://picsum.photos/80/80?random=100', // Mock avatar
+    avatarUrl: 'https://picsum.photos/80/80?random=100',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -35,19 +32,15 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
   const handleSaveProfile = (event: React.FormEvent) => {
     event.preventDefault();
     console.log('Profile saved:', profile);
-    // In a real app, this would involve API calls to update the user profile.
     alert('Profile updated successfully!');
   };
 
   const handleLogout = () => {
     console.log('Logging out...');
-    // This action would typically be handled by the parent App component's onLogout
-    // For this mock, we'll navigate to login
     navigate(RoutePath.Login);
   };
 
   const handleEditAvatar = () => {
-    // Navigate to a screen for capturing/selecting a new profile photo
     navigate(RoutePath.BodyPhotoCapture);
   };
 
@@ -59,38 +52,38 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
   ];
 
   return (
-    <div className={`${styles.profileScreen} animate-fade-in`}>
-      <div className={styles.header}>
-        <div className={styles.headerIconContainer}>
-          <svg className={styles.headerIcon} fill="none" height="36" viewBox="0 0 48 36" width="48" xmlns="http://www.w3.org/2000/svg">
+    <div className="h-full flex flex-col items-center py-8 bg-background-light dark:bg-background-dark animate-fade-in">
+      <div className="flex flex-col items-center mb-10 text-center">
+        <div className="mb-4 opacity-80 flex justify-center dark:opacity-100">
+          <svg className="text-primary" fill="none" height="36" viewBox="0 0 48 36" width="48" xmlns="http://www.w3.org/2000/svg">
             <path d="M24 2C24 2 20 2 20 6C20 8 22 9 24 9C26 9 28 8 28 6C28 2 24 2 24 2Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2"></path>
             <path d="M24 9V14M24 14L4 30H44L24 14Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2"></path>
           </svg>
         </div>
-        <TextElement variant="h1" as="h1" font="display" weight="medium" spacing="luxury-lg" className={styles.appTitle}>
+        <TextElement variant="h1" as="h1" font="display" weight="medium" spacing="luxury-lg" className="text-3xl text-primary uppercase mb-2 dark:text-slate-200">
           Style Me
         </TextElement>
-        <TextElement variant="p" font="sans" spacing="luxury-xl" className={styles.screenSubtitle}>
+        <TextElement variant="p" font="sans" spacing="luxury-xl" className="text-[10px] text-text-muted uppercase dark:text-slate-400">
           Personal Styling
         </TextElement>
       </div>
 
-      <div className={`${styles.profileCard} ios-shadow`}>
-        <div className={styles.avatarSection}>
-          <div className={styles.avatarWrapper}>
+      <div className="w-full max-w-[400px] bg-card-light rounded-4xl ios-shadow p-8 flex flex-col gap-6 dark:bg-card-dark dark:shadow-none">
+        <div className="flex flex-col items-center mb-2">
+          <div className="relative">
             {profile.avatarUrl ? (
-              <GenUIImage src={profile.avatarUrl} alt="User Avatar" className={styles.avatarImage} /> // FIX: Changed Image to GenUIImage
+              <GenUIImage src={profile.avatarUrl} alt="User Avatar" className="w-24 h-24 rounded-full border-4 border-card-light shadow-lg object-cover dark:bg-slate-800 dark:border-slate-700" />
             ) : (
-              <Icon name="person" size="xl" className={styles.defaultAvatarIcon} />
+              <Icon name="person" size="xl" className="text-4xl text-slate-400 dark:text-slate-500" />
             )}
-            <Button variant="iconOnly" className={styles.editAvatarButton} onClick={handleEditAvatar}>
+            <Button variant="iconOnly" className="absolute bottom-0 right-0 bg-primary text-card-light p-2 rounded-full shadow-md hover:scale-105" onClick={handleEditAvatar}>
               <Icon name="edit" size="xs" />
             </Button>
           </div>
         </div>
 
-        <form className={styles.profileForm} onSubmit={handleSaveProfile}>
-          <div className={styles.gridInputs}>
+        <form className="flex flex-col gap-5" onSubmit={handleSaveProfile}>
+          <div className="grid grid-cols-2 gap-4">
             <Input
               label="Height"
               placeholder="5'8\""
@@ -98,8 +91,6 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
               id="height"
               value={profile.height}
               onChange={handleChange}
-              containerClassName={styles.luxuryInputContainer}
-              className={styles.luxuryInput}
             />
             <Input
               label="Weight"
@@ -108,8 +99,6 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
               id="weight"
               value={profile.weight}
               onChange={handleChange}
-              containerClassName={styles.luxuryInputContainer}
-              className={styles.luxuryInput}
             />
           </div>
 
@@ -120,8 +109,6 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
             options={styleOptions}
             value={profile.stylePreference}
             onChange={handleChange}
-            containerClassName={styles.luxuryInputContainer}
-            className={styles.luxuryInput}
           />
 
           <Input
@@ -131,32 +118,30 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
             id="whatsapp"
             value={profile.whatsapp}
             onChange={handleChange}
-            containerClassName={styles.luxuryInputContainer}
-            className={styles.luxuryInput}
           />
 
-          <div className={styles.saveButtonContainer}>
-            <Button type="submit" className={styles.saveButton}>
+          <div className="pt-4">
+            <Button type="submit" className="w-full bg-primary text-card-light py-5 rounded-full font-semibold tracking-widest uppercase text-sm shadow-lg hover:opacity-90 active:scale-98">
               Save Profile
             </Button>
           </div>
         </form>
 
-        <div className={styles.socialDivider}>
-          <div className={styles.dividerLine}></div>
-          <TextElement variant="small" weight="bold" spacing="widest" className={styles.socialDividerText}>Social Access</TextElement>
-          <div className={styles.dividerLine}></div>
+        <div className="flex items-center gap-4 py-2">
+          <div className="h-px flex-1 bg-slate-100 dark:bg-slate-700"></div>
+          <TextElement variant="small" weight="bold" spacing="widest" className="text-[9px] font-bold tracking-widest text-slate-400 uppercase dark:text-slate-500">Social Access</TextElement>
+          <div className="h-px flex-1 bg-slate-100 dark:bg-slate-700"></div>
         </div>
 
-        <div className={styles.socialButtonsContainer}>
+        <div className="grid grid-cols-2 gap-4">
           <SocialButton provider="apple" />
           <SocialButton provider="google" />
         </div>
       </div>
 
-      <div className={styles.logoutPrompt}>
-        <TextElement variant="span" spacing="wide" className={styles.logoutText}>Want to sign out?</TextElement>
-        <Button variant="ghost" className={styles.logoutButton} onClick={handleLogout}>Logout</Button>
+      <div className="mt-10 mb-8 flex gap-2 items-center">
+        <TextElement variant="span" spacing="wide" className="text-[11px] tracking-wide text-slate-400 uppercase dark:text-slate-500">Want to sign out?</TextElement>
+        <Button variant="ghost" className="text-[11px] tracking-wide font-bold text-primary uppercase hover:underline dark:text-link-blue" onClick={handleLogout}>Logout</Button>
       </div>
     </div>
   );

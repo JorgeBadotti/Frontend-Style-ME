@@ -1,3 +1,44 @@
+@import "tailwindcss";
+@source "./index.html";
+@source "./App.tsx";
+@source "./components/**/*.{js,ts,jsx,tsx}";
+
+@theme {
+  /* Colors */
+  --color-primary: var(--color-primary);
+  --color-background-light: var(--color-background-light);
+  --color-background-dark: var(--color-background-dark);
+  --color-card-light: var(--color-card-light);
+  --color-card-dark: var(--color-card-dark);
+  --color-text-muted: var(--color-text-muted);
+  --color-link-blue: var(--color-link-blue);
+  --color-luxury-gold: var(--color-luxury-gold);
+  --color-filter-bg: var(--color-filter-bg);
+  --color-border-light: var(--color-border-light);
+  --color-border-dark: var(--color-border-dark);
+  --color-sheet-handle: var(--color-sheet-handle);
+  --color-red-alert: var(--color-red-alert);
+
+  /* Fonts */
+  --font-display: var(--font-display), serif;
+  --font-sans: var(--font-sans), sans-serif;
+  --font-displaySecondary: var(--font-displaySecondary), sans-serif;
+  --font-accent: var(--font-accent), sans-serif;
+
+  /* Spacing */
+  --spacing-luxury-sm: var(--spacing-luxury-sm);
+  --spacing-luxury-md: var(--spacing-luxury-md);
+  --spacing-luxury-lg: var(--spacing-luxury-lg);
+  --spacing-luxury-xl: var(--spacing-luxury-xl);
+
+  /* Border Radius */
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-3xl: var(--radius-3xl);
+  --radius-4xl: var(--radius-4xl);
+  --radius-5xl: var(--radius-5xl);
+}
+
 /* global.css */
 
 /* Root Variables for Colors, Fonts, Spacing */

@@ -1,22 +1,31 @@
 import React from 'react';
-import styles from './Icon.module.css';
 import { IconType } from '../../../types';
+import clsx from 'clsx';
 
 interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
   name: IconType;
   filled?: boolean;
   className?: string;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'; // Define common icon sizes
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }
 
 const Icon: React.FC<IconProps> = ({ name, filled = false, className, size = 'md', ...props }) => {
-  const iconClasses = [
-    'material-symbols-outlined', // Global class for Material Symbols font
-    styles.icon,
-    styles[size],
-    filled ? 'fill-1' : '', // Global class for filled icons (from global.css)
-    className,
-  ].filter(Boolean).join(' ');
+
+  const sizeClasses = {
+    xs: "text-[10px]",
+    sm: "text-xs", // 12px
+    md: "text-xl", // 20px
+    lg: "text-2xl", // 24px
+    xl: "text-[2rem]", // 32px
+  };
+
+  const iconClasses = clsx(
+    'material-symbols-outlined',
+    'inline-flex items-center justify-center',
+    sizeClasses[size],
+    filled && 'fill-1',
+    className
+  );
 
   return (
     <span className={iconClasses} {...props}>
