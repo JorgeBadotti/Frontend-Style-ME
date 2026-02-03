@@ -12,7 +12,7 @@ import ItemCard from '../molecules/ItemCard/ItemCard';
 const WardrobeGridScreen: React.FC = () => {
   const navigate = useNavigate();
   const { categoryName } = useParams<{ categoryName: string }>();
-  const [selectedItems, setSelectedItems] = useState<ClothingItem[]>([]);
+  const [selectedItems, setSelectedItems] = useState<Map<string, ClothingItem>>(new Map());
   const [currentCategoryItems, setCurrentCategoryItems] = useState<ClothingItem[]>([]);
 
   useEffect(() => {
@@ -23,7 +23,9 @@ const WardrobeGridScreen: React.FC = () => {
       if (category) {
         setCurrentCategoryItems(category.items);
         // Pre-select items that were already marked as selected in mock data
-        setSelectedItems(category.items.filter(item => item.selected));
+        const initialSelected = new Map<string, ClothingItem>();
+        category.items.filter(item => item.selected).forEach(item => initialSelected.set(item.id, item));
+        setSelectedItems(initialSelected);
       } else {
         setCurrentCategoryItems([]);
       }
@@ -31,18 +33,22 @@ const WardrobeGridScreen: React.FC = () => {
   }, [categoryName]);
 
   const handleItemToggle = (item: ClothingItem) => {
-    setSelectedItems(prev =>
-      prev.some(selected => selected.id === item.id)
-        ? prev.filter(selected => selected.id !== item.id)
-        : [...prev, item]
-    );
+    setSelectedItems(prev => {
+      const next = new Map(prev);
+      if (next.has(item.id)) {
+        next.delete(item.id);
+      } else {
+        next.set(item.id, item);
+      }
+      return next;
+    });
   };
 
   const isItemSelected = (itemId: string) =>
-    selectedItems.some(item => item.id === itemId);
+    selectedItems.has(itemId);
 
   const handleGenerateLook = () => {
-    console.log('Generating look with items:', selectedItems);
+    console.log('Generating look with items:', Array.from(selectedItems.values()));
     navigate(RoutePath.LookDetail.replace(':lookId', 'generated-look-from-grid'));
   };
 
@@ -105,25 +111,25 @@ const WardrobeGridScreen: React.FC = () => {
           <div className={styles.sheetHandle}></div>
           <div className={styles.summarySection}>
             <div className={styles.selectedItemsPreview}>
-              {selectedItems.slice(0, 3).map((item) => (
+              {Array.from(selectedItems.values()).slice(0, 3).map((item) => (
                 <div key={item.id} className={styles.previewItem}>
                   <GenUIImage alt="Thumb" src={item.imageUrl} className={styles.previewImage} objectFit="contain" /> {/* FIX: Changed Image to GenUIImage */}
                 </div>
               ))}
-              {selectedItems.length > 3 && (
+              {selectedItems.size > 3 && (
                 <div className={styles.moreItemsCount}>
-                  <TextElement variant="span" font="accent" weight="bold" className={styles.moreItemsText}>+{selectedItems.length - 3}</TextElement>
+                  <TextElement variant="span" font="accent" weight="bold" className={styles.moreItemsText}>+{selectedItems.size - 3}</TextElement>
                 </div>
               )}
             </div>
             <TextElement variant="p" font="accent" weight="bold" spacing="widest" className={styles.selectedCountText}>
-              {selectedItems.length} Item{selectedItems.length !== 1 ? 's' : ''} Selected
+              {selectedItems.size} Item{selectedItems.size !== 1 ? 's' : ''} Selected
             </TextElement>
             <Button
               className={styles.generateButton}
               onClick={handleGenerateLook}
               icon="auto_awesome"
-              disabled={selectedItems.length === 0}
+              disabled={selectedItems.size === 0}
             >
               Generate
             </Button>
