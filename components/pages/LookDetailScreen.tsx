@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { MOCK_LOOK_SUGGESTION, RoutePath } from '../../constants';
-import FeedbackModal from './FeedbackModal';
+import FeedbackModal from '../FeedbackModal';
 import styles from './LookDetailScreen.module.css'; // Import styles
 import Icon from '../atoms/Icon/Icon';
 import TextElement from '../atoms/TextElement/TextElement';
 import Button from '../atoms/Button/Button';
-import GenUIImage from '../atoms/Image/Image';
+import GenUIImage from '../atoms/GenUIImage/GenUIImage';
 
 interface LookDetailScreenProps {
   // We can pass a prop `lookId` or fetch from URL params

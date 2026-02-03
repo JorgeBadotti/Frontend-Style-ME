@@ -6,7 +6,7 @@ import styles from './WardrobeGridScreen.module.css';
 import Icon from '../atoms/Icon/Icon';
 import TextElement from '../atoms/TextElement/TextElement';
 import Button from '../atoms/Button/Button';
-import GenUIImage from '../atoms/Image/Image'; // FIX: Changed Image to GenUIImage
+import GenUIImage from '../atoms/GenUIImage/GenUIImage';
 import ItemCard from '../molecules/ItemCard/ItemCard';
 
 const WardrobeGridScreen: React.FC = () => {

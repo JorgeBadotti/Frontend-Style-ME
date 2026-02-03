@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Image.module.css';
+import styles from './GenUIImage.module.css';
 
 interface GenUIImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -13,7 +13,6 @@ interface GenUIImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   brightness?: 'default' | 'dim';
 }
 
-// FIX: Renamed component from Image to GenUIImage to avoid name collision with global Image constructor
 const GenUIImage: React.FC<GenUIImageProps> = ({
   src,
   alt,

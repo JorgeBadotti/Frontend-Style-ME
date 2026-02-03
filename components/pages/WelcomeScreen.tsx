@@ -4,7 +4,7 @@ import { RoutePath } from '../../constants';
 import styles from './WelcomeScreen.module.css';
 import Icon from '../atoms/Icon/Icon';
 import TextElement from '../atoms/TextElement/TextElement';
-import GenUIImage from '../atoms/Image/Image'; // FIX: Changed Image to GenUIImage
+import GenUIImage from '../atoms/GenUIImage/GenUIImage';
 import Button from '../atoms/Button/Button';
 
 const WelcomeScreen: React.FC = () => {

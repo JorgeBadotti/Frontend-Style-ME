@@ -7,7 +7,7 @@ import Icon from '../atoms/Icon/Icon';
 import TextElement from '../atoms/TextElement/TextElement';
 import Input from '../atoms/Input/Input';
 import Button from '../atoms/Button/Button';
-import GenUIImage from '../atoms/Image/Image';
+import GenUIImage from '../atoms/GenUIImage/GenUIImage';
 import SocialButton from '../molecules/SocialButton/SocialButton';
 
 interface ProfileScreenProps {
@@ -93,7 +93,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
           <div className={styles.gridInputs}>
             <Input
               label="Height"
-              placeholder="5'8\""
+              placeholder='5&apos;8"'
               type="text"
               id="height"
               value={profile.height}
