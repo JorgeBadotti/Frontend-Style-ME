@@ -1,0 +1,12 @@
+.content {
+    flex: 1 1 0%;
+    overflow: auto;
+    position: relative;
+    display: flex; /* Often needed to ensure children can expand */
+    flex-direction: column;
+}
+
+.bottomNavContainer {
+    position: relative;
+    z-index: 50;
+}

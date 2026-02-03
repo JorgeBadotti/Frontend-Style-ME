@@ -4,6 +4,7 @@ import BottomNavBar from './organisms/BottomNavBar'; // Updated path
 import PhoneFrame from './organisms/PhoneFrame'; // Updated path
 import { RoutePath } from '../constants';
 import { AppRoute } from '../types';
+import styles from './Layout.module.css';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -30,11 +31,11 @@ const Layout: React.FC<LayoutProps> = ({ children, isAuthenticated, onLogout }) 
 
   return (
     <PhoneFrame isLightStatusBar={isLightStatusBar}>
-      <div className="flex-1 overflow-auto relative">
+      <div className={styles.content}>
         {children}
       </div>
       {showBottomNav && (
-        <div className="relative z-50">
+        <div className={styles.bottomNavContainer}>
           <BottomNavBar />
         </div>
       )}
