@@ -6,6 +6,7 @@ import Icon from '../../atoms/Icon/Icon';
 import TextElement from '../../atoms/TextElement/TextElement';
 import Button from '../../atoms/Button/Button';
 import GenUIImage from '../../atoms/Image/Image';
+import { BottomSheet } from '../../organisms/BottomSheet';
 
 export const LookDetailScreen = () => {
   const {
@@ -45,14 +46,9 @@ export const LookDetailScreen = () => {
         <TextElement variant="h1" as="h1" font="display" weight="bold" spacing="luxury-lg" className={styles.appTitle}>STYLE ME</TextElement>
       </header>
 
-      {/* Bottom Sheet for Look Details */}
-      <div className={`${styles.bottomSheet} ios-shadow-top animate-slide-up-lux`}>
-        <div className={styles.sheetHandleContainer}>
-          <div className={styles.sheetHandle}></div>
-        </div>
-
-        <div className={`${styles.scrollableContent} hide-scrollbar`}>
-          <div className={styles.lookInfo}>
+      {/* Replaced manual bottom sheet implementation with new atomic Organism */}
+      <BottomSheet initialState="half">
+        <div className={styles.lookInfo}>
             <div>
               <TextElement variant="h2" as="h2" font="display" weight="bold" className={styles.lookName}>{look.name}</TextElement>
               <TextElement variant="small" font="accent" weight="bold" spacing="luxury-sm" className={styles.lookOccasion}>{look.occasion}</TextElement>
@@ -116,8 +112,7 @@ export const LookDetailScreen = () => {
               {isWorn ? 'Look Marcado como Usado!' : 'É o meu Look!'}
             </Button>
           </div>
-        </div>
-      </div>
+      </BottomSheet>
 
       {showFeedbackModal && (
         <FeedbackModal
