@@ -1,10 +1,9 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './NavLinkItem.module.css';
 import Icon from '../../atoms/Icon/Icon';
 import TextElement from '../../atoms/TextElement/TextElement';
-import { NavItem, AppRoute } from '../../../types'; // FIX: Imported AppRoute from types
-import { RoutePath } from '../../../constants'; // FIX: Removed AppRoute from constants import
+import { NavItem } from '../../../types';
 
 interface NavLinkItemProps {
   item: NavItem;
