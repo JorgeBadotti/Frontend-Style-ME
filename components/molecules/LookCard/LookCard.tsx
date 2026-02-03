@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './LookCard.module.css';
-import GenUIImage from '../../atoms/Image/Image'; // FIX: Changed Image to GenUIImage
+import GenUIImage from '../../atoms/Image/Image';
 import TextElement from '../../atoms/TextElement/TextElement';
 import Button from '../../atoms/Button/Button';
 
@@ -16,7 +16,7 @@ const LookCard: React.FC<LookCardProps> = ({ imageUrl, title, subtitle, lookId, 
   return (
     <div className={styles.lookCard}>
       <div className={styles.imageWrapper}>
-        <GenUIImage alt={title} src={imageUrl} className={styles.image} /> {/* FIX: Changed Image to GenUIImage */}
+        <GenUIImage alt={title} src={imageUrl} className={styles.image} />
         <div className={styles.buttonContainer}>
           <Button
             className={styles.actionButton}
