@@ -60,6 +60,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin }) => {
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               className={styles.togglePasswordVisibility}
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
               <Icon name={showPassword ? 'visibility_off' : 'visibility'} size="md" />
             </button>
