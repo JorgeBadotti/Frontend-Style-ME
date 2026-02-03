@@ -7,6 +7,8 @@ import Icon from '../atoms/Icon/Icon';
 import TextElement from '../atoms/TextElement/TextElement';
 import Button from '../atoms/Button/Button';
 import ItemCard from '../molecules/ItemCard/ItemCard';
+// FIX: Imported GenUIImage for use in the action panel
+import GenUIImage from '../atoms/Image/Image';
 
 interface ClosetScreenProps {}
 
@@ -87,7 +89,8 @@ const ClosetScreen: React.FC<ClosetScreenProps> = () => {
             <div className={styles.selectedItemsPreview}>
               {selectedItems.slice(0, 3).map((item) => (
                 <div key={item.id} className={styles.previewItem}>
-                  <GenUIImage alt="Thumb" src={item.imageUrl} className={styles.previewImage} objectFit="contain" /> {/* FIX: Changed Image to GenUIImage */}
+                  {/* FIX: Replaced img tag with GenUIImage component */}
+                  <GenUIImage alt="Thumb" src={item.imageUrl} className={styles.previewImage} objectFit="contain" />
                 </div>
               ))}
               {selectedItems.length > 3 && (

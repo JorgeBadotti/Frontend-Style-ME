@@ -9,7 +9,7 @@ interface TextElementProps extends React.HTMLAttributes<HTMLElement> {
   as?: React.ElementType; // Allows overriding the semantic HTML element
   font?: 'display' | 'sans' | 'displaySecondary' | 'accent';
   // FIX: Added 'extralight' to the weight type definition
-  weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold';
+  weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'extralight';
   spacing?: 'narrow' | 'wide' | 'widest' | 'luxury-sm' | 'luxury-md' | 'luxury-lg' | 'luxury-xl';
   italic?: boolean;
 }

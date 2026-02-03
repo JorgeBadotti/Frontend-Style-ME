@@ -1,4 +1,4 @@
-import { NavItem, FeedbackOption, ClosetCategory } from './types'; // FIX: Removed AppRoute from import
+import { NavItem, FeedbackOption, ClosetCategory, AppRoute } from './types'; // FIX: Added AppRoute to import
 
 export const RoutePath = {
   Welcome: '/',
@@ -83,7 +83,7 @@ export const MOCK_CLOSET_CATEGORIES: ClosetCategory[] = [
 export const MOCK_BAG_ITEMS = [
   { id: 'bagItem1', name: 'Classic Tote', price: 1200, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA1N89bWFIoEUXS2JaIZC8hhFwUhG-q6Tw0if62S5Jy42HBIiU3OmXcPs5odbYdLN0J-IO09LfWPtLkmEaWa1tgGQzG4U1q-EWQ7W_f4KEjGya27dZcZr_ymkJag8efWKSBZFFgsFchgeoWGlGDX56q-qe3Ff2ZbuXx6aYfIwpUhjBPhZ35fqEFuDOuilKjqPz-bhkcfsamwlR5MlJDhGAh5dB7dgwdUv4VGZazHl36Kxqs5AGN0FrOoClBQaunaxepKGUWZjNoMj7i', quantity: 1 },
   { id: 'bagItem2', name: 'Silk Blouse', price: 450, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBAb3GOnQDA5oOyQ5EyyN4qAAZDxzyizNlPRwawobnjvw6ohmgobmvph9kst_zdyjo8q0id2anrhjjdvzzucry4l9miipagci_lyga9m4zkg6izsbnmgem_fvu_0l9ovrnyelmyxgdtu7xgadpsgxgi_yhwbq3zdorp_clv-ohfp4orkxxv_m3k6gvvezbmu-wiqc9r2jn0vfilpyah1jevzxia6dhfrj2y9s-fypi_zne_n4k9yeidlran-zb_lz46himdac_f6kyn6', quantity: 1 },
-  { id: 'bagItem3', name: 'Heels', price: 650, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuALzoRINsz3WmmcECu5wa_kWIVQxoEKEyjKnLSKqMV2M6RwqRzgWgKJ5Adwz2vwaUr_27X_xgxXOape44un7tYVD7tASf-8qGRDAzxP4j6rE4j3o_1JUFccvcgPqdjljr2n6hh7yVLSiHgozaDPsGXgi_yHwBq3zdOrp_ClV-oHfP4orKXXv_m3K6gvVeZbm-wiQc9r2JN0VFIpLyah1JeVzXIXa6DhFRJ2y9s-Fypgze_N4K9yeIDLRAn-zbLZ46HIMDAcF6kYn6', quantity: 1 },
+  { id: 'bagItem3', name: 'Heels', price: 650, imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuALzoRINsz3WmmcECu5wa_kWIVQxoEKEyjKnLSKqMV2M6RwqRzgWgKJ5Adwz2vwaUr_27X_xgxXOape44un7tYVD7tASf-8qGRDAzxP4j6rE4j3o_1JUFccvcgPqdjljr2n6hh7yVLSiHgozaDPsGXgi_yHwBq3zdOrp_ClV-oHfP4orKXXv_m3K6gvVeZbm-wiQc9r2jn0vfilpyah1jevzxia6dhfrj2y9s-fypi_zne_n4k9yeidlran-zb_lz46himdac_f6kyn6', quantity: 1 },
 ];
 
 export const MOCK_STORE_ITEMS = [
@@ -101,6 +101,7 @@ export const MOCK_BRANDS = [
   { id: 'brand5', name: 'Bottega Veneta' },
   { id: 'brand6', name: 'Burberry' },
   { id: 'brand7', name: 'Cartier' },
+  // FIX: Added 'name' key to 'Chloé' object.
   { id: 'brand8', name: 'Chloé', isFavorite: true },
 ];
 
