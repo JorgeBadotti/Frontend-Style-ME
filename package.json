@@ -25,7 +25,8 @@
     "vitest": "^4.0.18"
   },
   "scripts": {
-    "dev": "vite",
+    "check-health": "node check-code-health.js",
+    "dev": "npm run check-health && vite",
     "build": "tsc && vite build",
     "test": "vitest"
   }
