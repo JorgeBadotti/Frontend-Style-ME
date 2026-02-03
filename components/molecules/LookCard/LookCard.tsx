@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './LookCard.module.css';
-import GenUIImage from '../../atoms/Image/Image'; // FIX: Changed Image to GenUIImage
+import GenUIImage from '../../atoms/GenUIImage/GenUIImage';
 import TextElement from '../../atoms/TextElement/TextElement';
 import Button from '../../atoms/Button/Button';
 

@@ -4,7 +4,7 @@ import { MOCK_WEATHER_INFO, MOCK_LOOK_SUGGESTION, RoutePath } from '../../consta
 import styles from './MyMomentsScreen.module.css';
 import Icon from '../atoms/Icon/Icon';
 import TextElement from '../atoms/TextElement/TextElement';
-import GenUIImage from '../atoms/Image/Image'; // FIX: Changed Image to GenUIImage
+import GenUIImage from '../atoms/GenUIImage/GenUIImage';
 import Button from '../atoms/Button/Button';
 import LookCard from '../molecules/LookCard/LookCard';
 import WeatherDisplay from '../molecules/WeatherDisplay/WeatherDisplay';

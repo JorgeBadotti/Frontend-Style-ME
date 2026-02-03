@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ItemCard.module.css';
 import { ClothingItem } from '../../../types';
-import GenUIImage from '../../atoms/Image/Image'; // FIX: Changed Image to GenUIImage
+import GenUIImage from '../../atoms/GenUIImage/GenUIImage';
 import TextElement from '../../atoms/TextElement/TextElement';
 import Icon from '../../atoms/Icon/Icon';
 
