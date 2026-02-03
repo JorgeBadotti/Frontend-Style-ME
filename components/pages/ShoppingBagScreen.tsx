@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MOCK_BAG_ITEMS, RoutePath } from '../../constants';
 import { BagItem } from '../../types';
@@ -24,9 +24,9 @@ const ShoppingBagScreen: React.FC<ShoppingBagScreenProps> = () => {
     setTimeout(() => setShowAIAdjustment(false), 2000); // Hide after 2 seconds
   };
 
-  const calculateTotal = () => {
+  const total = useMemo(() => {
     return bagItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  };
+  }, [bagItems]);
 
   const handleFinalizeSelection = () => {
     console.log('Finalizing selection:', bagItems);
@@ -105,7 +105,7 @@ const ShoppingBagScreen: React.FC<ShoppingBagScreenProps> = () => {
 
           <div className={styles.summarySection}>
             <TextElement variant="p" font="accent" weight="bold" spacing="luxury-lg" className={styles.totalText}>
-              Estimated Total: ${calculateTotal().toFixed(2)}
+              Estimated Total: ${total.toFixed(2)}
             </TextElement>
             <Button
               className={styles.finalizeButton}
