@@ -93,7 +93,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
           <div className={styles.gridInputs}>
             <Input
               label="Height"
-              placeholder="5'8\""
+              placeholder={'5\'8"'}
               type="text"
               id="height"
               value={profile.height}
