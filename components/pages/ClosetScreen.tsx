@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MOCK_CLOSET_CATEGORIES, RoutePath } from '../../constants';
 import { ClothingItem } from '../../types';
@@ -30,8 +30,10 @@ const ClosetScreen: React.FC<ClosetScreenProps> = () => {
     navigate(RoutePath.LookDetail.replace(':lookId', 'new-generated-look')); // Mock navigation
   };
 
+  const selectedItemIds = useMemo(() => new Set(selectedItems.map(item => item.id)), [selectedItems]);
+
   const isItemSelected = (itemId: string) =>
-    selectedItems.some(item => item.id === itemId);
+    selectedItemIds.has(itemId);
 
   const handleViewAll = (categoryName: string) => {
     navigate(RoutePath.WardrobeGrid.replace(':categoryName', categoryName));
