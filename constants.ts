@@ -1,4 +1,4 @@
-import { NavItem, AppRoute, FeedbackOption, ClosetCategory } from './types';
+import { NavItem, FeedbackOption, ClosetCategory } from './types'; // FIX: Removed AppRoute from import
 
 export const RoutePath = {
   Welcome: '/',
@@ -32,7 +32,7 @@ export const MOCK_LOOK_SUGGESTION = {
   occasion: 'Suggested for Tonight',
   matchScore: 94,
   reasoning: `Based on your preference for monochromatic silhouettes and the current forecast of 18°C. This look integrates your silk textures with architectural outerwear for an elevated evening profile.`,
-  imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCltnMpvuznHnzsZyT25M7ZRB37PzP6c3N3G-aOqCClIJB9gN6qGqX5rN362zclRU_GJjegf4Y9d0ODwVGpRwO7lKjz0VCCkucpbVz2YFjPDF_vxz--UHvhQIcSUOkqiptCoCn7e2Pop6vcrfspA6dj6x-arN7gCIyINZ5IOKqDRHGJFVwoaEkXWls49xmBnlftkG8UE-i3LwZJuuYaGFN-Ansc56maJVIDMBZAWuw4mA2qbgtFu0ObKtmH0ZB603NnkwCP5wIpQGKa',
+  imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCltnMpvuznHnzsZyT25M7ZRB37PzP6c3N3G-aOqCClIJB9gN6qGqX5rN362zclRU_GJjegf4Y9d0ODwVGpRwO7lKjz0VCCkucpbVz2YFjPDF_vxz--UHvhQIcSUOkqiptCoCn7e2Pop6vcrfspA6dj6x-arN7gCIyINZ5IOKqDRHGJFVwoaEkXWls49xmBnlftxG8UE-i3LwZJuuYaGFN-Ansc56maJVIDMBZAWuw4mA2qbgtFu0ObKtmH0ZB603NnkwCP5wIpQGKa',
   items: [
     { id: 'item1', name: 'Architectural Blazer', category: 'Outerwear', imageUrl: 'https://picsum.photos/80/80?random=1', source: 'store' },
     { id: 'item2', name: 'Silk Slip Trousers', category: 'Bottoms', imageUrl: 'https://picsum.photos/80/80?random=2', source: 'mine' },

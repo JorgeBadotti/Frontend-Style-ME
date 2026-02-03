@@ -1,0 +1,99 @@
+/* components/atoms/TextElement/TextElement.module.css */
+
+.textBase {
+    line-height: 1.5; /* Default line height */
+    color: var(--color-slate-900);
+}
+
+.dark .textBase {
+    color: var(--color-slate-100);
+}
+
+/* Variants - mapping to semantic HTML and default sizes/weights */
+.h1 {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.h2 {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.h3 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.h4 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.p {
+    font-size: 1rem; /* 16px */
+    font-weight: 400;
+}
+
+.span {
+    font-size: 1rem; /* 16px */
+    font-weight: 400;
+    display: inline-block; /* Ensure span can have margins/padding */
+}
+
+.label {
+    font-size: 0.75rem; /* 12px */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--spacing-luxury-sm);
+    color: var(--color-text-muted);
+}
+.dark .label {
+    color: var(--color-slate-400);
+}
+
+.small {
+    font-size: 0.625rem; /* 10px */
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+.dark .small {
+    color: var(--color-slate-500);
+}
+
+.quote {
+    font-size: 1.125rem; /* 18px */
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+
+/* Font Families */
+.font-display { font-family: var(--font-display); }
+.font-sans { font-family: var(--font-sans); }
+.font-displaySecondary { font-family: var(--font-displaySecondary); }
+.font-accent { font-family: var(--font-accent); }
+
+/* Font Weights */
+.weight-light { font-weight: 300; }
+.weight-normal { font-weight: 400; }
+.weight-medium { font-weight: 500; }
+.weight-semibold { font-weight: 600; }
+.weight-bold { font-weight: 700; }
+.weight-extrabold { font-weight: 800; }
+
+/* Letter Spacing */
+.spacing-narrow { letter-spacing: var(--spacing-narrow); }
+.spacing-wide { letter-spacing: var(--spacing-wide); }
+.spacing-widest { letter-spacing: var(--spacing-widest); }
+.spacing-luxury-sm { letter-spacing: var(--spacing-luxury-sm); }
+.spacing-luxury-md { letter-spacing: var(--spacing-luxury-md); }
+.spacing-luxury-lg { letter-spacing: var(--spacing-luxury-lg); }
+.spacing-luxury-xl { letter-spacing: var(--spacing-luxury-xl); }
+
+/* Italic */
+.italic { font-style: italic; }

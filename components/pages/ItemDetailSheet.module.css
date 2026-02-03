@@ -1,0 +1,254 @@
+/* components/pages/ItemDetailSheet.module.css */
+
+.itemDetailSheet {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: flex-end; /* Align sheet to bottom */
+    justify-content: center;
+}
+
+.itemNotFoundContainer {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background-light);
+}
+
+.dark .itemNotFoundContainer {
+    background-color: var(--color-background-dark);
+}
+
+.itemNotFoundText {
+    color: var(--color-text-muted);
+}
+
+.goBackButton {
+    margin-top: 1rem; /* mt-4 */
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.dark .goBackButton {
+    color: var(--color-link-blue);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5); /* black/50 */
+    backdrop-filter: blur(8px); /* backdrop-blur-md */
+}
+
+.backgroundImage {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.backgroundImageActual {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05); /* scale-105 */
+}
+
+.backgroundImageOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5); /* black/50 */
+}
+
+.topControls {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem; /* p-6 */
+    gap: 1.5rem; /* gap-6 */
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.topControlGroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-card-light);
+}
+
+.controlIcon {
+    font-size: 1.875rem; /* 30px */
+}
+
+.brandTitle {
+    font-size: 1.125rem; /* 18px */
+    color: var(--color-card-light);
+    text-transform: uppercase;
+}
+
+.bottomSheet {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: var(--color-card-light);
+    border-top-left-radius: var(--radius-3xl); /* 40px */
+    border-top-right-radius: var(--radius-3xl); /* 40px */
+    padding-top: 0.75rem; /* pt-3 */
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.15); /* ios-shadow-top */
+}
+
+.dark .bottomSheet {
+    background-color: var(--color-card-dark);
+}
+
+.sheetHandleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0.25rem 0 1rem; /* pt-1 pb-4 */
+}
+
+.sheetHandle {
+    height: 0.375rem; /* 6px */
+    width: 3rem; /* 48px */
+    border-radius: var(--radius-full);
+    background-color: var(--color-sheet-handle);
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.dark .sheetHandle {
+    background-color: var(--color-slate-700);
+}
+
+.swipeDismissText {
+    font-size: 0.5625rem; /* 9px */
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+.sheetHeader {
+    width: 100%;
+    text-align: center;
+    padding: 0 1.5rem 2.5rem; /* px-6 pb-10 */
+}
+
+.sheetTitle {
+    color: var(--color-primary);
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.25; /* leading-tight */
+    text-transform: uppercase;
+}
+
+.dark .sheetTitle {
+    color: var(--color-slate-100);
+}
+
+.detailsList {
+    width: 100%;
+    padding: 0 2.5rem 3rem; /* px-10 pb-12 */
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* space-y-10 */
+}
+
+.detailItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.375rem; /* gap-1.5 */
+}
+
+.detailLabel {
+    font-size: 0.625rem; /* 10px */
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+.dark .detailLabel {
+    color: var(--color-slate-500);
+}
+
+.detailValue {
+    font-size: 0.875rem; /* 14px */
+    color: var(--color-primary);
+    letter-spacing: var(--spacing-wide);
+    text-transform: uppercase;
+}
+
+.dark .detailValue {
+    color: var(--color-slate-200);
+}
+
+.colorDisplay {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* gap-3 */
+}
+
+.colorSwatch {
+    width: 1rem; /* 16px */
+    height: 1rem; /* 16px */
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-slate-100);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* shadow-sm */
+    background-color: #F7E7CE; /* Example color, should be dynamic */
+}
+
+.actionButtonContainer {
+    width: 100%;
+    padding: 0 2rem 3.5rem; /* px-8 pb-14 */
+}
+
+.addToLookButton {
+    width: 100%;
+    height: 4rem; /* 64px */
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    color: var(--color-card-light);
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+    letter-spacing: var(--spacing-luxury-sm);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* shadow-xl */
+    /* shadow-primary/20 - custom color shadow, replicating manually: */
+    box-shadow: 0 10px 15px -3px rgba(52, 73, 94, 0.2), 0 4px 6px -4px rgba(52, 73, 94, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.addToLookButton::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255,255,255,0.05); /* white/5 */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.addToLookButton:hover::before {
+    opacity: 1;
+}
+
+.addToLookButton:active {
+    transform: scale(0.98);
+}
+
+.homeIndicatorSpace {
+    height: 1.5rem; /* 24px */
+    width: 100%;
+    background-color: var(--color-card-light);
+}
+
+.dark .homeIndicatorSpace {
+    background-color: var(--color-card-dark);
+}

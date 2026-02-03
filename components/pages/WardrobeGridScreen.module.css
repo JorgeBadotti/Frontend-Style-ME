@@ -1,0 +1,238 @@
+/* components/pages/WardrobeGridScreen.module.css */
+
+.wardrobeGridScreen {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background-light);
+}
+
+.dark .wardrobeGridScreen {
+    background-color: var(--color-background-dark);
+}
+
+.headerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 55;
+    background-color: var(--color-card-light);
+    padding-top: 3rem; /* pt-12 */
+    border-bottom: 1px solid var(--color-background-light);
+}
+
+.dark .headerContainer {
+    background-color: var(--color-card-dark);
+    border-color: var(--color-border-dark);
+}
+
+.headerContent {
+    padding: 1rem 1.5rem 1rem; /* px-6 pt-4 pb-4 */
+    display: flex;
+    flex-direction: column;
+}
+
+.titleArea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.backButton {
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
+    border-radius: var(--radius-full);
+    background-color: var(--color-background-light);
+    color: var(--color-primary);
+}
+
+.dark .backButton {
+    background-color: var(--color-card-dark);
+    color: var(--color-slate-100);
+}
+
+.backButton:active {
+    background-color: var(--color-slate-200);
+}
+
+.categoryTitle {
+    font-size: 1.5rem; /* 24px */
+    color: var(--color-primary);
+    line-height: 1; /* Adjust to fit the design, Tailwind h2 default line-height is 1.2 */
+}
+
+.dark .categoryTitle {
+    color: var(--color-slate-100);
+}
+
+.itemCount {
+    font-size: 0.625rem; /* 10px */
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.filterButtonsContainer {
+    display: flex;
+    gap: 0.5rem; /* gap-2 */
+    overflow-x: auto;
+    padding-bottom: 0.5rem; /* pb-2 */
+    margin: 0 1.5rem; /* Match px-6 of the parent */
+}
+
+.filterButton {
+    flex-shrink: 0;
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border-radius: var(--radius-full);
+    font-size: 0.5625rem; /* 9px */
+    font-weight: 700;
+    letter-spacing: var(--spacing-widest);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* gap-2 */
+}
+
+.filterButton[variant="primary"] {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* shadow-md */
+}
+
+
+.itemGridContainer {
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--color-background-light);
+    padding: 12rem 1.5rem 15rem; /* p-6 pt-48 */
+}
+
+.dark .itemGridContainer {
+    background-color: var(--color-background-dark);
+}
+
+.itemGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; /* gap-4 */
+    padding-bottom: 3.25rem; /* pb-52 */
+}
+
+/* Bottom Action Panel (similar to ClosetScreen) */
+.actionPanel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 70;
+    display: flex;
+    flex-direction: column;
+}
+
+.actionPanelContent {
+    background-color: var(--color-card-light);
+    border-top-left-radius: var(--radius-3xl); /* 40px */
+    border-top-right-radius: var(--radius-3xl); /* 40px */
+    padding: 0.75rem 2rem 1.5rem; /* px-8 pt-3 pb-6 */
+}
+
+.dark .actionPanelContent {
+    background-color: var(--color-card-dark);
+}
+
+.sheetHandle {
+    width: 3rem; /* 48px */
+    height: 0.25rem; /* 4px */
+    background-color: var(--color-sheet-handle);
+    border-radius: var(--radius-full);
+    margin: 0 auto 1rem; /* mx-auto mb-4 */
+}
+
+.summarySection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selectedItemsPreview {
+    display: flex;
+    gap: -0.75rem; /* -space-x-3 */
+}
+
+.previewItem {
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-card-light);
+    background-color: var(--color-background-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* shadow-sm */
+}
+
+.dark .previewItem {
+    border-color: var(--color-card-dark);
+    background-color: var(--color-card-dark);
+}
+
+.previewItem:not(:first-child) {
+  margin-left: -0.75rem; /* Overlap effect */
+}
+
+.previewImage {
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+    object-fit: contain;
+}
+
+.moreItemsCount {
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-card-light);
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* shadow-sm */
+}
+
+.moreItemsCount:not(:first-child) {
+  margin-left: -0.75rem; /* Overlap effect */
+}
+
+.moreItemsText {
+    font-size: 0.5rem; /* 8px */
+    color: var(--color-card-light);
+    text-transform: uppercase;
+}
+
+.selectedCountText {
+    font-size: 0.625rem; /* 10px */
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+.dark .selectedCountText {
+    color: var(--color-slate-100);
+}
+
+.generateButton {
+    background-color: var(--color-primary);
+    color: var(--color-card-light);
+    border-radius: var(--radius-full);
+    padding: 0.625rem 1.25rem; /* px-5 py-2.5 */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* gap-2 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* shadow-lg */
+}
+
+.generateButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}

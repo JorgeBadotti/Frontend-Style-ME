@@ -1,0 +1,159 @@
+/* global.css */
+
+/* Root Variables for Colors, Fonts, Spacing */
+:root {
+    /* Colors */
+    --color-primary: #34495E;
+    --color-background-light: #F7F8FA;
+    --color-background-dark: #0f172a;
+    --color-card-light: #FFFFFF;
+    --color-card-dark: #1E293B;
+    --color-text-muted: #7F8C8D;
+    --color-link-blue: #4A6FA5;
+    --color-luxury-gold: #C5A059;
+    --color-filter-bg: #F9F9F9;
+    --color-border-light: #E0E0E0;
+    --color-border-dark: #333333;
+    --color-sheet-handle: #CBD5E1;
+    --color-red-alert: #E74C3C;
+    --color-blue-50: #EFF6FF; /* Equivalent to Tailwind blue-50 */
+    --color-blue-600: #2563EB; /* Equivalent to Tailwind blue-600 */
+    --color-slate-50: #F8FAFC;
+    --color-slate-100: #F1F5F9;
+    --color-slate-200: #E2E8F0;
+    --color-slate-300: #CBD5E1;
+    --color-slate-400: #94A3B8;
+    --color-slate-500: #64748B;
+    --color-slate-600: #475569;
+    --color-slate-700: #334155;
+    --color-slate-800: #1E293B;
+    --color-slate-900: #0F172A;
+
+    /* Fonts */
+    --font-display: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', 'Inter', sans-serif;
+    --font-displaySecondary: 'Manrope', sans-serif;
+    --font-accent: 'Manrope', sans-serif;
+
+    /* Letter Spacing */
+    --spacing-narrow: 0.05em;
+    --spacing-wide: 0.1em;
+    --spacing-widest: 0.25em;
+    --spacing-luxury-sm: 0.09375rem; /* 1.5px */
+    --spacing-luxury-md: 0.15em;
+    --spacing-luxury-lg: 0.2em;
+    --spacing-luxury-xl: 0.3em;
+
+    /* Border Radius */
+    --radius-default: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2rem;
+    --radius-3xl: 2.5rem;
+    --radius-4xl: 3rem;
+    --radius-5xl: 3.5rem;
+    --radius-full: 9999px;
+}
+
+/* Base Body Styles */
+body {
+    min-height: max(884px, 100dvh);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--color-background-light);
+    color: var(--color-slate-900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+/* Dark Mode (Conceptual, to be applied by parent React component if needed) */
+.dark body {
+    background-color: var(--color-background-dark);
+    color: var(--color-slate-100);
+}
+
+/* Material Symbols Icon Font Settings */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+.material-symbols-outlined.fill-1 {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom scrollbar hiding (for iOS-like feel) */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Specific shadows for iOS-like sheets/cards */
+.ios-shadow-top {
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
+}
+.ios-shadow {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Animations */
+@keyframes slideUpLux {
+    0% { transform: translateY(40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes scanLine {
+    0% { top: 20px; }
+    50% { top: calc(100% - 22px); }
+    100% { top: 20px; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Utility classes (minimal, for common layout/text patterns) */
+.animate-slide-up-lux {
+    animation: slideUpLux 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 300ms ease-out forwards;
+}
+
+.animate-scan-line {
+    animation: scanLine 3s linear infinite;
+}
+
+.animate-spin-slow {
+    animation: spin 3s linear infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}

@@ -1,0 +1,75 @@
+/* components/molecules/WeatherDisplay/WeatherDisplay.module.css */
+
+.weatherCard {
+    background-color: var(--color-background-light);
+    border-radius: var(--radius-2xl); /* 24px */
+    padding: 1rem; /* p-4 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--color-border-light);
+}
+
+.dark .weatherCard {
+    background-color: var(--color-card-dark);
+    border-color: var(--color-border-dark);
+}
+
+.temperatureInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.weatherLabel {
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem; /* mb-1 */
+    font-size: 0.5625rem; /* 9px */
+    text-transform: uppercase;
+}
+
+.weatherDetails {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* gap-2 */
+}
+
+.weatherIcon {
+    color: var(--color-primary);
+    font-size: 1.25rem; /* 20px */
+}
+
+.weatherText {
+    font-size: 0.75rem; /* 12px */
+    color: var(--color-slate-900);
+    text-transform: uppercase;
+}
+
+.dark .weatherText {
+    color: var(--color-slate-100);
+}
+
+.divider {
+    height: 2rem; /* 32px */
+    width: 1px;
+    background-color: var(--color-slate-200);
+}
+
+.dark .divider {
+    background-color: var(--color-border-dark);
+}
+
+.recommendationInfo {
+    text-align: right;
+}
+
+.recommendationLabel {
+    color: var(--color-primary);
+    font-size: 0.5rem; /* 8px */
+    text-transform: uppercase;
+}
+
+.recommendationText {
+    font-size: 0.5625rem; /* 9px */
+    color: var(--color-slate-500);
+    text-transform: uppercase;
+}

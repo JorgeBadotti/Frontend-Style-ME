@@ -2,18 +2,18 @@ import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { RoutePath } from './constants';
 import Layout from './components/Layout';
-import WelcomeScreen from './components/WelcomeScreen';
-import LoginScreen from './components/LoginScreen';
-import MyMomentsScreen from './components/MyMomentsScreen';
-import ClosetScreen from './components/ClosetScreen';
-import ItemCaptureScreen from './components/ItemCaptureScreen';
-import ProfileScreen from './components/ProfileScreen';
-import ShoppingBagScreen from './components/ShoppingBagScreen';
-import LookDetailScreen from './components/LookDetailScreen';
-import ItemDetailSheet from './components/ItemDetailSheet';
-import WardrobeGridScreen from './components/WardrobeGridScreen';
-import QRScannerScreen from './components/QRScannerScreen';
-import BodyPhotoCaptureScreen from './components/BodyPhotoCaptureScreen';
+import WelcomeScreen from './components/pages/WelcomeScreen';
+import LoginScreen from './components/pages/LoginScreen';
+import MyMomentsScreen from './components/pages/MyMomentsScreen';
+import ClosetScreen from './components/pages/ClosetScreen';
+import ItemCaptureScreen from './components/pages/ItemCaptureScreen';
+import ProfileScreen from './components/pages/ProfileScreen';
+import ShoppingBagScreen from './components/pages/ShoppingBagScreen';
+import LookDetailScreen from './components/pages/LookDetailScreen';
+import ItemDetailSheet from './components/pages/ItemDetailSheet';
+import WardrobeGridScreen from './components/pages/WardrobeGridScreen';
+import QRScannerScreen from './components/pages/QRScannerScreen';
+import BodyPhotoCaptureScreen from './components/pages/BodyPhotoCaptureScreen';
 
 const App: React.FC = () => {
   // Assume a simple authentication state for demonstration

@@ -1,0 +1,25 @@
+/* components/atoms/Icon/Icon.module.css */
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Default Material Symbols font settings are in global.css */
+}
+
+/* Icon Sizes */
+.xs {
+    font-size: 0.625rem; /* 10px */
+}
+.sm {
+    font-size: 0.75rem; /* 12px */
+}
+.md {
+    font-size: 1.25rem; /* 20px - Default size */
+}
+.lg {
+    font-size: 1.5rem; /* 24px */
+}
+.xl {
+    font-size: 2rem; /* 32px */
+}

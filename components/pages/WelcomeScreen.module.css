@@ -1,0 +1,304 @@
+/* components/pages/WelcomeScreen.module.css */
+
+.welcomeScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_asFOzh7fWjJPUql8Vx4YC1F5cdnhZn224s6uMO8CxeeuZeQSn0K0mmRXeWFHHV8s03I0_5aSNRp5iUOlY3p-flJaSxt_DsP-c8T4cRIniG5DgsyVaei1of14pCbpzOU7MdP5MlX8HBaacbxVxND_-OSNYfnyzyMIItSXbdqlfKScS9HkTOLyFGN51LBincx9t1MbdN_nOjzou3uPLRUu7ZkCoUP-H5Yd92CW1WyoTi1wFxpjkbhdGNkSElHQlYBPbrpwcR32ZeFf');
+    background-size: cover;
+    background-position: center;
+}
+
+.mainContent {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 25rem; /* 400px */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1.5rem; /* py-10 px-6 */
+    gap: 1.5rem; /* space-y-6 */
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem; /* space-y-2 */
+    margin-bottom: 0.5rem;
+}
+
+.logoIconContainer {
+    color: var(--color-card-light);
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25)); /* drop-shadow-lg */
+}
+
+.logoIcon {
+    font-size: 3.125rem; /* 50px */
+    font-weight: 200;
+}
+
+.appTitle {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 200;
+    color: var(--color-card-light);
+    letter-spacing: var(--spacing-widest);
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.appSubtitle {
+    font-size: 0.5625rem; /* 9px */
+    letter-spacing: var(--spacing-luxury-xl);
+    color: rgba(255,255,255,0.9); /* white/90 */
+    text-transform: uppercase;
+}
+
+.journeyCard {
+    width: 100%;
+    border-radius: var(--radius-4xl); /* 48px */
+    padding: 1.5rem; /* 24px */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* shadow-2xl */
+    border: 1px solid rgba(255,255,255,0.5); /* border-white/50 */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 */
+}
+
+.journeyCardHeader {
+    text-align: center;
+    gap: 0.25rem; /* space-y-1 */
+    margin-bottom: 0.5rem;
+}
+
+.journeyTitle {
+    font-size: 1.5rem; /* 24px */
+    color: var(--color-primary);
+}
+
+.divider {
+    width: 3rem; /* 48px */
+    height: 1px;
+    background-color: var(--color-luxury-gold);
+    margin: 0.75rem auto; /* my-3 */
+}
+
+.journeySubtitle {
+    font-size: 0.5625rem; /* 9px */
+    color: var(--color-text-muted);
+    letter-spacing: var(--spacing-widest);
+    text-transform: uppercase;
+}
+
+.navLinkCard {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space-x-4 */
+    padding: 0.75rem; /* p-3 */
+    border-radius: var(--radius-2xl); /* 24px */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: transparent; /* Button default */
+    text-align: left; /* Ensure text alignment for internal elements */
+}
+
+.navLinkCard:hover {
+    border-color: rgba(var(--color-luxury-gold), 0.2); /* hover:border-luxury-gold/20 */
+}
+
+.navLinkCard:active {
+    transform: scale(0.98);
+    background-color: rgba(0,0,0,0.05); /* active:bg-black/5 */
+}
+
+.avatarWrapper {
+    width: 5rem; /* 80px */
+    height: 5rem; /* 80px */
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* shadow-lg */
+    border: 2px solid var(--color-card-light);
+}
+
+.avatarImage {
+    filter: grayscale(20%);
+    transition: all 0.5s ease-in-out;
+}
+
+.navLinkCard:hover .avatarImage {
+    filter: grayscale(0%);
+}
+
+.linkTextContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.linkTitle {
+    font-size: 0.875rem; /* 14px */
+    color: var(--color-primary);
+    letter-spacing: var(--spacing-widest);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.linkDescription {
+    font-size: 0.5625rem; /* 9px */
+    color: var(--color-slate-600);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.linkEnter {
+    font-size: 0.5625rem; /* 9px */
+    color: var(--color-luxury-gold);
+    letter-spacing: var(--spacing-luxury-lg);
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navLinkCard:hover .linkEnter {
+    transform: translateX(4px);
+}
+
+.linkArrowIcon {
+    font-size: 0.625rem; /* 10px */
+    margin-left: 0.25rem;
+}
+
+.cardDivider {
+    height: 1px;
+    background-color: rgba(226, 232, 240, 0.6); /* gray-200/60 */
+    width: 85%;
+    margin: 0 auto;
+}
+
+.footerBrandSection {
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(241, 245, 249, 0.8); /* gray-100/80 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.vesttagBrand, .googleAiBrand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.vesttagLogo {
+    width: 1.25rem; /* 20px */
+    height: 1.25rem; /* 20px */
+    background-color: var(--color-primary);
+    border-radius: var(--radius-default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vesttagLetter {
+    color: var(--color-card-light);
+    font-size: 0.5rem; /* 8px */
+    font-weight: 700;
+}
+
+.vesttagText {
+    font-size: 0.4375rem; /* 7px */
+    font-weight: 700;
+    letter-spacing: var(--spacing-widest);
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--color-slate-900); /* Default text color */
+}
+
+.dark .vesttagText {
+    color: var(--color-slate-100);
+}
+
+.vesttagTextLight {
+    font-weight: 300;
+}
+
+.googleAiText {
+    font-size: 0.4375rem; /* 7px */
+    font-weight: 700;
+    letter-spacing: var(--spacing-widest);
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 1;
+    color: var(--color-slate-900);
+}
+
+.dark .googleAiText {
+    color: var(--color-slate-100);
+}
+
+.googleAiTextLight {
+    font-weight: 300;
+    font-size: 0.375rem; /* 6px */
+}
+
+.googleAiIcon {
+    width: 0.875rem; /* 14px */
+    height: 0.875rem; /* 14px */
+}
+
+.featuredSection {
+    width: 100%;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* space-y-4 */
+}
+
+.featuredTitle {
+    font-size: 0.5rem; /* 8px */
+    color: rgba(255,255,255,0.8); /* white/80 */
+    text-transform: uppercase;
+}
+
+.featuredBrands {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem; /* space-x-10 */
+    opacity: 0.7;
+    filter: brightness(1.5); /* brightness-150 */
+}
+
+.vogue {
+    font-size: 0.875rem; /* 14px */
+    font-style: italic;
+    letter-spacing: -0.025em; /* tracking-tight */
+    color: var(--color-card-light);
+}
+
+.elle {
+    font-size: 0.875rem; /* 14px */
+    letter-spacing: var(--spacing-widest);
+    text-transform: uppercase;
+    color: var(--color-card-light);
+}
+
+.bazaar {
+    font-size: 0.875rem; /* 14px */
+    letter-spacing: var(--spacing-luxury-lg);
+    text-transform: uppercase;
+    color: var(--color-card-light);
+}

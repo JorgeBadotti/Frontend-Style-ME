@@ -1,0 +1,48 @@
+/* components/molecules/SocialButton/SocialButton.module.css */
+
+.socialButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem; /* 12px */
+    padding: 1rem 1rem; /* 16px */
+    border-radius: var(--radius-2xl); /* 24px */
+    border: 1px solid var(--color-slate-100);
+    background-color: var(--color-card-light);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Similar to Tailwind shadow-sm */
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none; /* In case it's used as a link */
+}
+
+.dark .socialButton {
+    border: 1px solid var(--color-slate-700);
+    background-color: var(--color-card-dark);
+    box-shadow: none; /* Dark mode often has less harsh shadows */
+}
+
+.socialButton:hover {
+    background-color: var(--color-slate-50);
+}
+
+.dark .socialButton:hover {
+    background-color: var(--color-slate-700);
+}
+
+.socialButton:active {
+    transform: scale(0.98);
+}
+
+.icon {
+    width: 1.25rem; /* 20px */
+    height: 1.25rem; /* 20px */
+}
+
+.labelText {
+    font-size: 0.625rem; /* 10px */
+    color: var(--color-slate-700);
+}
+
+.dark .labelText {
+    color: var(--color-slate-300);
+}

@@ -1,0 +1,88 @@
+/* components/atoms/Input/Input.module.css */
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem; /* 12px */
+    font-weight: 700;
+    letter-spacing: var(--spacing-luxury-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    padding-left: 0.1rem;
+}
+.dark .label {
+    color: var(--color-slate-400);
+}
+.label.errorLabel {
+    color: var(--color-red-alert);
+}
+
+.input {
+    width: 100%;
+    padding: 1rem 1.25rem; /* 16px 20px */
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border-light);
+    background-color: var(--color-filter-bg);
+    color: var(--color-slate-700);
+    font-size: 0.875rem; /* 14px */
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+.dark .input {
+    background-color: var(--color-slate-700);
+    border-color: var(--color-slate-600);
+    color: var(--color-slate-200);
+}
+
+.input::placeholder {
+    color: var(--color-slate-300);
+}
+.dark .input::placeholder {
+    color: var(--color-slate-600);
+}
+
+.input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.input.errorInput {
+    border-color: var(--color-red-alert);
+    box-shadow: 0 0 0 1px var(--color-red-alert);
+}
+
+.errorMessage {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--color-red-alert);
+    margin-top: 0.25rem;
+    padding-left: 0.1rem;
+}
+
+/* Select specific styles */
+.selectWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.selectWrapper .input {
+    appearance: none; /* Remove default browser dropdown arrow */
+    padding-right: 2.5rem; /* Space for custom icon */
+    cursor: pointer;
+}
+
+.selectWrapper .selectIcon {
+    position: absolute;
+    right: 1.25rem; /* 20px */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.875rem; /* 14px */
+    color: var(--color-slate-400);
+    pointer-events: none; /* Ensure clicks go through to select */
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import BottomNavBar from './BottomNavBar';
-import PhoneFrame from './PhoneFrame';
+import BottomNavBar from './organisms/BottomNavBar'; // Updated path
+import PhoneFrame from './organisms/PhoneFrame'; // Updated path
 import { RoutePath } from '../constants';
-import { AppRoute } from '../types'; // Import AppRoute from types
+import { AppRoute } from '../types';
 
 interface LayoutProps {
   children: React.ReactNode;

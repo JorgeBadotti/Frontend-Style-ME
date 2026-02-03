@@ -1,5 +1,7 @@
 {
   "name": "Style-Me App",
   "description": "A luxury personal styling application for wardrobe management and look generation.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [
+    "camera"
+  ]
 }

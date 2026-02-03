@@ -1,0 +1,227 @@
+/* components/pages/MyMomentsScreen.module.css */
+
+.myMomentsScreen {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background-light);
+}
+
+.dark .myMomentsScreen {
+    background-color: var(--color-background-dark);
+}
+
+.backgroundImageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    z-index: 0;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), transparent, rgba(0,0,0,0.1));
+}
+
+.headerTitleContainer {
+    position: absolute;
+    top: 4rem; /* 64px */
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.headerTitle {
+    font-size: 1.5rem; /* 24px */
+    color: var(--color-card-light);
+    filter: drop-shadow(0 4px 3px rgba(0,0,0,0.07)) drop-shadow(0 2px 2px rgba(0,0,0,0.06)); /* drop-shadow-md */
+    text-transform: uppercase;
+}
+
+.bottomSheet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72%;
+    background-color: var(--color-card-light);
+    border-top-left-radius: var(--radius-4xl); /* 48px */
+    border-top-right-radius: var(--radius-4xl); /* 48px */
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+}
+
+.dark .bottomSheet {
+    background-color: var(--color-card-dark);
+}
+
+.sheetHandleContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.75rem; /* py-3 */
+}
+
+.sheetHandle {
+    width: 2.5rem; /* 40px */
+    height: 0.375rem; /* 6px */
+    background-color: var(--color-sheet-handle);
+    border-radius: var(--radius-full);
+}
+
+.scrollableContent {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 2rem; /* Adjusted for bottom nav, was pb-32 */
+}
+
+.filterButtonsContainer {
+    padding: 0 1.5rem; /* px-6 */
+    margin-top: 0.5rem; /* mt-2 */
+}
+
+.filterButtonsWrapper {
+    background-color: var(--color-slate-100);
+    border: 1px solid var(--color-border-light);
+    padding: 0.25rem; /* p-1 */
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.dark .filterButtonsWrapper {
+    background-color: var(--color-card-dark);
+    border-color: var(--color-border-dark);
+}
+
+.filterButton {
+    flex: 1;
+    padding: 0.5rem 0; /* py-2 */
+    border-radius: var(--radius-full);
+    color: var(--color-slate-400);
+    font-size: 0.5rem; /* 8px */
+    letter-spacing: var(--spacing-luxury-sm);
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent; /* Ghost variant default */
+}
+
+.filterButtonActive {
+    flex: 1;
+    padding: 0.5rem 0; /* py-2 */
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    color: var(--color-card-light);
+    font-size: 0.5rem; /* 8px */
+    letter-spacing: var(--spacing-luxury-sm);
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    font-weight: 700;
+}
+
+.momentsHeader {
+    margin-top: 1.5rem; /* mt-6 */
+    padding: 0 1.5rem; /* px-6 */
+    text-align: left;
+}
+
+.momentsTitle {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: var(--color-slate-900);
+    text-transform: uppercase;
+}
+
+.dark .momentsTitle {
+    color: var(--color-slate-100);
+}
+
+.momentsSubtitle {
+    font-size: 0.625rem; /* 10px */
+    color: var(--color-text-muted);
+    margin-top: 0.25rem; /* mt-1 */
+    text-transform: uppercase;
+}
+
+.weatherSection {
+    margin-top: 1.5rem; /* mt-6 */
+    padding: 0 1.5rem; /* px-6 */
+}
+
+.lookSuggestionsSection {
+    margin-top: 2rem; /* mt-8 */
+    padding-bottom: 2rem; /* pb-32 */
+}
+
+.lookSuggestionsHeader {
+    padding: 0 1.5rem; /* px-6 */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* space-y-2 */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.lookSuggestionsTitleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* gap-2 */
+}
+
+.lookSuggestionsIcon {
+    color: var(--color-primary);
+    font-size: 1.125rem; /* 18px */
+}
+
+.lookSuggestionsTitle {
+    font-size: 0.75rem; /* 12px */
+    color: var(--color-slate-900);
+    text-transform: uppercase;
+}
+
+.dark .lookSuggestionsTitle {
+    color: var(--color-slate-100);
+}
+
+.lookTags {
+    display: flex;
+    gap: 0.5rem; /* gap-2 */
+}
+
+.lookTagCorporate, .lookTagFresh {
+    padding: 0.25rem 0.75rem; /* px-3 py-1 */
+    border-radius: var(--radius-full);
+    font-size: 0.5625rem; /* 9px */
+    font-weight: 700;
+    letter-spacing: var(--spacing-luxury-sm);
+    text-transform: uppercase;
+}
+
+.lookTagCorporate {
+    background-color: var(--color-blue-50);
+    color: var(--color-blue-600);
+}
+
+.lookTagFresh {
+    background-color: var(--color-slate-50);
+    color: var(--color-slate-500);
+}
+
+.lookCardsContainer {
+    display: flex;
+    gap: 1rem; /* gap-4 */
+    overflow-x: auto;
+    padding: 0 1.5rem; /* px-6 */
+    scroll-snap-type: x mandatory;
+}

@@ -1,0 +1,155 @@
+/* components/atoms/Button/Button.module.css */
+
+.button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-sans);
+    font-size: 0.75rem; /* ~12px */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--spacing-luxury-sm);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Primary Button */
+.primary {
+    background-color: var(--color-primary);
+    color: var(--color-card-light);
+    box-shadow: 0 6px 16px rgba(52, 73, 94, 0.2); /* Deeper shadow for primary */
+}
+.primary:hover {
+    background-color: var(--color-slate-700);
+    box-shadow: 0 8px 20px rgba(52, 73, 94, 0.3);
+}
+.primary:active {
+    transform: scale(0.98);
+}
+.primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Secondary Button (e.g., for filters, less prominent actions) */
+.secondary {
+    background-color: var(--color-background-light);
+    color: var(--color-primary);
+    border: 1px solid var(--color-border-light);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.dark .secondary {
+    background-color: var(--color-card-dark);
+    color: var(--color-slate-100);
+    border: 1px solid var(--color-border-dark);
+}
+.secondary:hover {
+    background-color: var(--color-slate-100);
+}
+.dark .secondary:hover {
+    background-color: var(--color-slate-700);
+}
+.secondary:active {
+    transform: scale(0.98);
+}
+.secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Ghost Button (minimal styling, text-based) */
+.ghost {
+    background: transparent;
+    color: var(--color-text-muted);
+    padding: 0.5rem 1rem;
+    letter-spacing: var(--spacing-luxury-sm);
+    font-weight: 500;
+}
+.dark .ghost {
+    color: var(--color-slate-400);
+}
+.ghost:hover {
+    opacity: 0.7;
+}
+.ghost:active {
+    transform: scale(0.98);
+}
+.ghost:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Icon Only Button */
+.iconOnly {
+    background-color: transparent;
+    color: var(--color-primary);
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    padding: 0;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent; /* default transparent border */
+}
+.dark .iconOnly {
+    color: var(--color-slate-100);
+}
+.iconOnly:hover {
+    background-color: var(--color-slate-100);
+}
+.dark .iconOnly:hover {
+    background-color: var(--color-slate-700);
+}
+.iconOnly:active {
+    transform: scale(0.95);
+}
+.iconOnly:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Chip Button (for filter/feedback tags) */
+.chip {
+    height: 2.75rem; /* 44px */
+    padding: 0 1.25rem; /* 20px */
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border-light);
+    background-color: var(--color-filter-bg);
+    color: var(--color-primary);
+    font-size: 0.8125rem; /* 13px */
+    font-weight: 700;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+}
+.dark .chip {
+    background-color: var(--color-card-dark);
+    border-color: var(--color-border-dark);
+    color: var(--color-slate-300);
+}
+.chip:hover {
+    background-color: var(--color-slate-100);
+}
+.dark .chip:hover {
+    background-color: var(--color-slate-700);
+}
+.chip.selected {
+    background-color: var(--color-primary);
+    color: var(--color-card-light);
+    border-color: var(--color-primary);
+}
+
+/* Icon positioning */
+.iconLeft {
+  margin-right: 0.5rem;
+}
+
+.iconRight {
+  margin-left: 0.5rem;
+}

@@ -86,3 +86,9 @@ export interface FeedbackOption {
   label: string;
   value: string;
 }
+
+// Atomic Design specific types
+export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'iconOnly' | 'chip';
+export type InputType = 'text' | 'email' | 'password' | 'tel' | 'select';
+export type TextVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span' | 'label' | 'small' | 'quote';
+export type IconType = string; // Material Symbols icon name

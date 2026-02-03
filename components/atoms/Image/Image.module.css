@@ -1,0 +1,35 @@
+/* components/atoms/Image/Image.module.css */
+
+.imageContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden; /* Ensures borderRadius clips content */
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    display: block; /* Remove extra space below images */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Object Fit */
+.object-contain { object-fit: contain; }
+.object-cover { object-fit: cover; }
+.object-fill { object-fit: fill; }
+.object-none { object-fit: none; }
+.object-scale-down { object-fit: scale-down; }
+
+/* Border Radius */
+.radius-none { border-radius: 0; }
+.radius-sm { border-radius: var(--radius-default); }
+.radius-md { border-radius: var(--radius-lg); }
+.radius-lg { border-radius: var(--radius-2xl); }
+.radius-full { border-radius: var(--radius-full); }
+
+/* Effects */
+.grayscale { filter: grayscale(20%); } /* Default for WelcomeScreen images */
+.grayscale-hover:hover { filter: grayscale(0%); }
+.blur { filter: blur(4px); }
+.brightness-dim { filter: brightness(0.95); } /* Equivalent to Tailwind brightness-95 */
