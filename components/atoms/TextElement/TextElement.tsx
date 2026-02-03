@@ -25,7 +25,6 @@ const TextElement: React.FC<TextElementProps> = ({
   italic = false,
   ...props
 }) => {
-  // FIX: Map 'quote' variant to 'blockquote' HTML element
   const Component = as || (variant === 'quote' ? 'blockquote' : variant);
 
   const textClasses = [
