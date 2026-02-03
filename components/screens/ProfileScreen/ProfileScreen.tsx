@@ -1,62 +1,22 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { RoutePath } from '../../constants';
-import { UserProfile, Gender } from '../../types';
+import React from 'react';
+import { useProfileLogic } from './ProfileScreen.hooks';
 import styles from './ProfileScreen.module.css';
-import Icon from '../atoms/Icon/Icon';
-import TextElement from '../atoms/TextElement/TextElement';
-import Input from '../atoms/Input/Input';
-import Button from '../atoms/Button/Button';
-import GenUIImage from '../atoms/Image/Image'; // FIX: Changed Image to GenUIImage
-import SocialButton from '../molecules/SocialButton/SocialButton';
+import Icon from '../../atoms/Icon/Icon';
+import TextElement from '../../atoms/TextElement/TextElement';
+import Input from '../../atoms/Input/Input';
+import Button from '../../atoms/Button/Button';
+import GenUIImage from '../../atoms/Image/Image';
+import SocialButton from '../../molecules/SocialButton/SocialButton';
 
-interface ProfileScreenProps {
-  // onLogout: () => void; // Passed from App.tsx via Layout for consistency
-}
-
-const ProfileScreen: React.FC<ProfileScreenProps> = () => {
-  const navigate = useNavigate();
-  const [profile, setProfile] = useState<UserProfile>({
-    name: 'Jane Doe',
-    email: 'jane.doe@example.com',
-    height: "5'8\"",
-    weight: '135 lbs',
-    stylePreference: 'Minimalist Chic',
-    whatsapp: '+1 (555) 000-0000',
-    gender: Gender.FEMALE,
-    avatarUrl: 'https://picsum.photos/80/80?random=100', // Mock avatar
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { id, value } = e.target;
-    setProfile(prev => ({ ...prev, [id]: value }));
-  };
-
-  const handleSaveProfile = (event: React.FormEvent) => {
-    event.preventDefault();
-    console.log('Profile saved:', profile);
-    // In a real app, this would involve API calls to update the user profile.
-    alert('Profile updated successfully!');
-  };
-
-  const handleLogout = () => {
-    console.log('Logging out...');
-    // This action would typically be handled by the parent App component's onLogout
-    // For this mock, we'll navigate to login
-    navigate(RoutePath.Login);
-  };
-
-  const handleEditAvatar = () => {
-    // Navigate to a screen for capturing/selecting a new profile photo
-    navigate(RoutePath.BodyPhotoCapture);
-  };
-
-  const styleOptions = [
-    { value: 'Minimalist Chic', label: 'Minimalist Chic' },
-    { value: 'Avant-Garde', label: 'Avant-Garde' },
-    { value: 'Streetwear Luxury', label: 'Streetwear Luxury' },
-    { value: 'Classic Professional', label: 'Classic Professional' },
-  ];
+export const ProfileScreen = () => {
+  const {
+    profile,
+    handleChange,
+    handleSaveProfile,
+    handleLogout,
+    handleEditAvatar,
+    styleOptions
+  } = useProfileLogic();
 
   return (
     <div className={`${styles.profileScreen} animate-fade-in`}>
@@ -79,7 +39,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
         <div className={styles.avatarSection}>
           <div className={styles.avatarWrapper}>
             {profile.avatarUrl ? (
-              <GenUIImage src={profile.avatarUrl} alt="User Avatar" className={styles.avatarImage} /> // FIX: Changed Image to GenUIImage
+              <GenUIImage src={profile.avatarUrl} alt="User Avatar" className={styles.avatarImage} />
             ) : (
               <Icon name="person" size="xl" className={styles.defaultAvatarIcon} />
             )}
@@ -161,5 +121,3 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
     </div>
   );
 };
-
-export default ProfileScreen;

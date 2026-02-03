@@ -1,64 +1,34 @@
-import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { MOCK_LOOK_SUGGESTION, RoutePath } from '../../constants';
-import FeedbackModal from '../FeedbackModal';
-import styles from './LookDetailScreen.module.css'; // Import styles
-import Icon from '../atoms/Icon/Icon';
-import TextElement from '../atoms/TextElement/TextElement';
-import Button from '../atoms/Button/Button';
-import GenUIImage from '../atoms/Image/Image';
+import React from 'react';
+import { useLookDetailLogic } from './LookDetailScreen.hooks';
+import FeedbackModal from '../../FeedbackModal';
+import styles from './LookDetailScreen.module.css';
+import Icon from '../../atoms/Icon/Icon';
+import TextElement from '../../atoms/TextElement/TextElement';
+import Button from '../../atoms/Button/Button';
+import GenUIImage from '../../atoms/Image/Image';
 
-interface LookDetailScreenProps {
-  // We can pass a prop `lookId` or fetch from URL params
-}
-
-export const LookDetailScreen: React.FC<LookDetailScreenProps> = () => { // Changed to named export
-  const navigate = useNavigate();
-  const { lookId } = useParams<{ lookId: string }>();
-  const [showFeedbackModal, setShowFeedbackModal] = useState<boolean>(false);
-  const [isWorn, setIsWorn] = useState<boolean>(false); // New state for "Mark as Worn" functionality
-
-  // In a real app, fetch look details based on lookId
-  const look = MOCK_LOOK_SUGGESTION; // Using mock data for now
+export const LookDetailScreen = () => {
+  const {
+    look,
+    showFeedbackModal,
+    isWorn,
+    handleLookAction,
+    handleItemDetailClick,
+    handleFeedbackSubmit,
+    handleGoBack,
+    handleCloseFeedbackModal
+  } = useLookDetailLogic();
 
   if (!look) {
     return (
       <div className={`${styles.lookNotFoundContainer} animate-fade-in`}>
         <TextElement variant="p" className={styles.lookNotFoundText}>Look not found.</TextElement>
-        <Button variant="ghost" onClick={() => navigate(-1)} className={styles.goBackButton}>
+        <Button variant="ghost" onClick={handleGoBack} className={styles.goBackButton}>
           Go Back
         </Button>
       </div>
     );
   }
-
-  const handleLookAction = (action: 'like' | 'dislike' | 'wear') => {
-    if (action === 'dislike') {
-      console.log(`User disliked look: ${look.name}`);
-      setShowFeedbackModal(true);
-    } else if (action === 'wear') {
-      console.log(`User marked look as worn: ${look.name}`);
-      setIsWorn(true); // Mark as worn
-      alert(`Look "${look.name}" marcado como usado!`); // Confirmation message
-      // Optionally navigate away or update UI without immediate navigation
-      // navigate(RoutePath.Home); 
-    } else if (action === 'like') {
-      console.log(`User liked look: ${look.name}`);
-      alert(`Look "${look.name}" salvo nos favoritos!`);
-      // navigate(RoutePath.Home); // Go back to home after action
-    }
-  };
-
-  const handleItemDetailClick = (itemId: string) => {
-    navigate(RoutePath.ItemDetail.replace(':itemId', itemId));
-  };
-
-  const handleFeedbackSubmit = (feedback: string[]) => {
-    console.log('Feedback submitted:', feedback);
-    // Process feedback, then dismiss modal
-    setShowFeedbackModal(false);
-    navigate(RoutePath.Home); // Navigate away or update UI
-  };
 
   return (
     <div className={`${styles.lookDetailScreen} animate-fade-in`}>
@@ -151,12 +121,10 @@ export const LookDetailScreen: React.FC<LookDetailScreenProps> = () => { // Chan
 
       {showFeedbackModal && (
         <FeedbackModal
-          onClose={() => setShowFeedbackModal(false)}
+          onClose={handleCloseFeedbackModal}
           onSubmit={handleFeedbackSubmit}
         />
       )}
     </div>
   );
 };
-
-export default LookDetailScreen;

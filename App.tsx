@@ -7,9 +7,9 @@ import LoginScreen from './components/pages/LoginScreen';
 import MyMomentsScreen from './components/pages/MyMomentsScreen';
 import ClosetScreen from './components/pages/ClosetScreen';
 import ItemCaptureScreen from './components/pages/ItemCaptureScreen';
-import ProfileScreen from './components/pages/ProfileScreen';
+import ProfileScreen from './components/screens/ProfileScreen';
 import ShoppingBagScreen from './components/pages/ShoppingBagScreen';
-import { LookDetailScreen } from './components/pages/LookDetailScreen'; // Changed to named import
+import LookDetailScreen from './components/screens/LookDetailScreen';
 import ItemDetailSheet from './components/pages/ItemDetailSheet';
 import WardrobeGridScreen from './components/pages/WardrobeGridScreen';
 import QRScannerScreen from './components/pages/QRScannerScreen';
