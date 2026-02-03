@@ -8,17 +8,23 @@ interface FeedbackModalProps {
 }
 
 const FeedbackModal: React.FC<FeedbackModalProps> = ({ onClose, onSubmit }) => {
-  const [selectedReasons, setSelectedReasons] = useState<string[]>([]);
+  const [selectedReasons, setSelectedReasons] = useState<Set<string>>(new Set());
   const [otherReason, setOtherReason] = useState<string>('');
 
   const handleChipClick = (value: string) => {
-    setSelectedReasons(prev =>
-      prev.includes(value) ? prev.filter(reason => reason !== value) : [...prev, value]
-    );
+    setSelectedReasons(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(value)) {
+        newSet.delete(value);
+      } else {
+        newSet.add(value);
+      }
+      return newSet;
+    });
   };
 
   const handleSubmit = () => {
-    onSubmit(selectedReasons, otherReason);
+    onSubmit(Array.from(selectedReasons), otherReason);
   };
 
   return (
@@ -42,7 +48,7 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({ onClose, onSubmit }) => {
               <button
                 key={option.value}
                 className={`flex h-11 items-center justify-center rounded-full border transition-colors ${
-                  selectedReasons.includes(option.value)
+                  selectedReasons.has(option.value)
                     ? 'border-primary bg-primary text-white'
                     : 'border-border-light bg-filter-bg dark:bg-card-dark dark:border-border-dark text-primary dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
                 } px-5`}
