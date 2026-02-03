@@ -101,7 +101,6 @@ export const MOCK_BRANDS = [
   { id: 'brand5', name: 'Bottega Veneta' },
   { id: 'brand6', name: 'Burberry' },
   { id: 'brand7', name: 'Cartier' },
-  // FIX: Added 'name' key to 'Chloé' object.
   { id: 'brand8', name: 'Chloé', isFavorite: true },
 ];
 
