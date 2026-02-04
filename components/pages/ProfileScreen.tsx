@@ -83,7 +83,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
             ) : (
               <Icon name="person" size="xl" className={styles.defaultAvatarIcon} />
             )}
-            <Button variant="iconOnly" className={styles.editAvatarButton} onClick={handleEditAvatar}>
+            <Button variant="iconOnly" className={styles.editAvatarButton} onClick={handleEditAvatar} aria-label="Edit avatar">
               <Icon name="edit" size="xs" />
             </Button>
           </div>
