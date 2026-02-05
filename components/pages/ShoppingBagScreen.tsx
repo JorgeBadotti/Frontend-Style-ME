@@ -56,10 +56,19 @@ const ShoppingBagScreen: React.FC<ShoppingBagScreenProps> = () => {
 
       {/* Top action bar, blurred from underlying content */}
       <div className={styles.topActionBar}>
-        <Button variant="iconOnly" className={styles.actionButton}>
+        <Button
+          variant="iconOnly"
+          className={styles.actionButton}
+          onClick={() => navigate(-1)}
+          aria-label="Go back"
+        >
           <Icon name="arrow_back_ios_new" />
         </Button>
-        <Button variant="iconOnly" className={styles.actionButton}>
+        <Button
+          variant="iconOnly"
+          className={styles.actionButton}
+          aria-label="View favorites"
+        >
           <Icon name="favorite" />
         </Button>
       </div>
