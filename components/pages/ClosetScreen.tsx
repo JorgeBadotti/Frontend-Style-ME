@@ -44,11 +44,11 @@ const ClosetScreen: React.FC<ClosetScreenProps> = () => {
       {/* Header with Nav and Title */}
       <div className={styles.headerContainer}>
         <div className={styles.headerContent}>
-          <Button variant="ghost" className={styles.navButton} onClick={() => navigate(-1)}>
+          <Button variant="ghost" className={styles.navButton} onClick={() => navigate(-1)} aria-label="Go back">
             <Icon name="chevron_left" size="lg" />
           </Button>
           <TextElement variant="h3" as="h1" font="display" weight="bold" className={styles.title}>Style-Me</TextElement>
-          <Button variant="ghost" className={styles.navButton}>
+          <Button variant="ghost" className={styles.navButton} aria-label="More options">
             <Icon name="more_horiz" size="lg" />
           </Button>
         </div>
