@@ -127,6 +127,7 @@ export const LookDetailScreen: React.FC<LookDetailScreenProps> = () => { // Chan
                 variant="secondary"
                 className={styles.feedbackButton}
                 onClick={() => handleLookAction('dislike')}
+                aria-label="Dislike look"
               >
                 <Icon name="thumb_down" size="md" />
               </Button>
@@ -134,6 +135,7 @@ export const LookDetailScreen: React.FC<LookDetailScreenProps> = () => { // Chan
                 variant="secondary"
                 className={styles.feedbackButton}
                 onClick={() => handleLookAction('like')}
+                aria-label="Like look"
               >
                 <Icon name="favorite" size="md" />
               </Button>
