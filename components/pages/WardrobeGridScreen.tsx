@@ -62,7 +62,12 @@ const WardrobeGridScreen: React.FC = () => {
       <div className={styles.headerContainer}>
         <div className={styles.headerContent}>
           <div className={styles.titleArea}>
-            <Button variant="ghost" className={styles.backButton} onClick={() => navigate(-1)}>
+            <Button
+              variant="ghost"
+              className={styles.backButton}
+              onClick={() => navigate(-1)}
+              aria-label="Go back"
+            >
               <Icon name="chevron_left" size="lg" />
             </Button>
             <TextElement variant="h2" as="h2" font="display" className={styles.categoryTitle}>
